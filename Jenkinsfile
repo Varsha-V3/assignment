@@ -35,4 +35,14 @@ node {
         }
     }
     
+    stage('Pull image') {
+        docker.withRegistry('https://registry.hub.docker.com', 'dockerhub') {
+            steps {
+                sh 'sudo docker pull varshv/assignment:latest'
+                sh 'sudo docker run -i varshv/assignment:latest'
+            }
+        }
+        
+    }
+
 }
