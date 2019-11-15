@@ -37,8 +37,8 @@ node {
     
     stage('Pull image') {
         docker.withRegistry('https://registry.hub.docker.com', 'dockerhub') {
-                sh 'sudo docker pull varshv/assignment:latest'
-                sh 'sudo docker run -i varshv/assignment:latest'
+                sh 'docker pull varshv/assignment:latest'
+                sh 'docker run -i varshv/assignment:latest'
             }
         
     }
